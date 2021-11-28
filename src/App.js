@@ -1,15 +1,5 @@
-import React, { Component } from 'react';
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <label>bar</label>
-//         <input type="text" onClick={() => {console.log("hello")}} />
-//       </React.Fragment>
-//     )
-//   }
-// }
+import React from 'react';
+import PropTypes from 'prop-types'
 
 const App = () => {
   const profiles = [
@@ -29,11 +19,13 @@ const App = () => {
 }
 
 const User = (props) => {
-  return <div>name={props.name} age={props.age} {props.index}</div>
+  return <div>name={props.name} age={props.age}</div>
 }
 
-User.defaultProps = {
-  age:0
+// 型設定
+User.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number.isRequired
 }
 
 export default App;
